@@ -62,8 +62,8 @@ function! Uncomment()
   endif
 endfunction
 
-map <C-c> :call Comment()<CR>
-map <C-u> :call Uncomment()<CR>
+map <C-z> :call Comment()<CR>
+map <C-x> :call Uncomment()<CR>
 
 """
 " hlsearch will highlight all the searched instances
