@@ -35,10 +35,35 @@ nnoremap <leader>9 9gt
 nnoremap <leader>0 :tablast<CR>
 nnoremap <leader>t :tabnew<CR>
 
-" tree view
+" netrw tree view
 let g:netrw_liststyle=3
 let g:netrw_banner=0
 let g:netrw_browse_split=3
+
+function! Comment()
+  let ext = &filetype
+  if ext == 'php' || ext == 'ruby' || ext == 'sh' || ext == 'python'
+    s/^/\# /
+  elseif ext == 'javascript' || ext == 'java' || ext == 'cpp' || ext == 'go' || ext == 'scala'
+    s:^:\/\/ :g
+  elseif ext == 'vim'
+    s:^:\" :g
+  endif
+endfunction
+
+function! Uncomment()
+  let ext = &filetype
+  if ext == 'php' || ext == 'ruby' || ext == 'sh' || ext == 'python'
+    s/^\# //
+  elseif ext == 'javascript' || ext == 'java' || ext == 'cpp' || ext == 'go' || ext == 'scala'
+    s:^\/\/ ::g
+  elseif ext == 'vim'
+    s:^\" ::g
+  endif
+endfunction
+
+map <C-c> :call Comment()<CR>
+map <C-u> :call Uncomment()<CR>
 
 """
 " hlsearch will highlight all the searched instances
