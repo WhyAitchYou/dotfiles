@@ -3,8 +3,34 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" External Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug 'itchyny/lightline.vim'
+set noshowmode
+
+Plug 'sheerun/vim-polyglot'
+
+Plug 'bluz71/vim-nightfly-guicolors'
+set termguicolors
+
+call plug#end()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Built-ins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme nightfly
 set history=50
 syntax enable
 set scrolloff=999
@@ -14,7 +40,6 @@ set relativenumber
 set cursorline
 
 set laststatus=2
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ L:\ %l\ \ C:\ %c
 
 set wildmenu
 
@@ -38,7 +63,12 @@ nnoremap <leader>t :tabnew<CR>
 " netrw tree view
 let g:netrw_liststyle=3
 let g:netrw_banner=0
-let g:netrw_browse_split=3
+let g:netrw_browse_split=4
+let g:netrw_winsize = 25
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 function! Comment()
   let ext = &filetype
@@ -62,8 +92,8 @@ function! Uncomment()
   endif
 endfunction
 
-map <C-z> :call Comment()<CR>
-map <C-x> :call Uncomment()<CR>
+map <C-\> :call Comment()<CR>
+map <C-]> :call Uncomment()<CR>
 
 """
 " hlsearch will highlight all the searched instances
@@ -78,25 +108,10 @@ map <C-x> :call Uncomment()<CR>
 " everything transparent to users that adopt this vimrc.
 """
 set hlsearch
+set incsearch
 """
 " in normal mode, map return key, to the command nohlsearch
 """
 nnoremap <CR> :nohlsearch<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" External Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
-
-call plug#end()
 
 
