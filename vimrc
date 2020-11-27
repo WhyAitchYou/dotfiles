@@ -3,7 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" External Plugins
+" Plugins Installation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -22,22 +22,54 @@ set noshowmode
 Plug 'sheerun/vim-polyglot'
 
 Plug 'bluz71/vim-nightfly-guicolors'
-set termguicolors
 
 call plug#end()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Built-ins
+" Configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set termguicolors
 colorscheme nightfly
+
+"""
+" Feature: [Feature Name]
+"   - Effect:
+"   - Motivation:
+"   - Demo (Optional)
+"""
+
+""" Feature: Hybrid line numbers
+"   - Effect: combine both absolute & relative line number
+"   - Motivation: use a mindset of "[go/select] [up/down] [X] lines"
+"                 relative to the line where the cursor's at
+"""
+set relativenumber
+set cursorline
+
+"""
+" Feature: Insert Mode ESC remap
+"   - Effect: type 'jkl' to exit insert mode
+"   - Motivation: alternative to <ESC> or <C-[> or <C-c>
+"   - Sideeffect: if, you want to type 'jk', then you have to wait 
+"                 for the timeout after typing 'j' before typing 'k'.
+"                 default timeout is 1000 ms, you can adjust it with
+"                 ':timeoutlen'
+"   - Demo (Optional)
+"""
+inoremap jk <ESC>
+inoremap <ESC> <NOP>
+set timeoutlen=300
+
+
 set history=50
 syntax enable
 set scrolloff=999
 
-set number
-set relativenumber
-set cursorline
+nnoremap j gj
+nnoremap k gk
+
+
 
 set laststatus=2
 
@@ -64,7 +96,7 @@ nnoremap <leader>t :tabnew<CR>
 let g:netrw_liststyle=3
 let g:netrw_banner=0
 let g:netrw_browse_split=4
-let g:netrw_winsize = 25
+let g:netrw_winsize = 20
 augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * :Vexplore
@@ -112,6 +144,6 @@ set incsearch
 """
 " in normal mode, map return key, to the command nohlsearch
 """
-nnoremap <CR> :nohlsearch<CR>
+nnoremap <leader><CR> :nohlsearch<CR>
 
 
