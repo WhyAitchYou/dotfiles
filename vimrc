@@ -11,16 +11,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-set noshowmode
-
 Plug 'sheerun/vim-polyglot'
-
 Plug 'bluz71/vim-nightfly-guicolors'
 
 call plug#end()
@@ -31,14 +26,11 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
 colorscheme nightfly
+set noshowmode
 
-"""
-" Feature: [Feature Name]
-"   - Effect:
-"   - Motivation:
-"   - Demo (Optional)
-"""
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Feature List
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Feature: Hybrid line numbers
 "   - Effect: combine both absolute & relative line number
 "   - Motivation: use a mindset of "[go/select] [up/down] [X] lines"
@@ -60,6 +52,7 @@ set cursorline
 inoremap jk <ESC>
 inoremap <ESC> <NOP>
 set timeoutlen=300
+
 
 
 set history=50
