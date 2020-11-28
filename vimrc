@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -24,11 +25,10 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set termguicolors
 colorscheme nightfly
-set noshowmode
-set history=50
+set noshowmode termguicolors history=50 textwidth=100
 syntax enable
+let g:lightline = { 'colorscheme': 'nightfly' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Feature List
@@ -38,40 +38,73 @@ syntax enable
 "   - Motivation: use a mindset of "[go/select] [up/down] [X] lines"
 "                 relative to the line where the cursor's at
 """
-set relativenumber
-set cursorline
+set number relativenumber cursorline
 
 """
 " Feature: Insert Mode ESC remap
-"   - Effect: type 'jkl' to exit insert mode
+"   - Effect: type 'jk' to exit insert mode
 "   - Motivation: alternative to <ESC> or <C-[> or <C-c>
 "   - Sideeffect: if, you want to type 'jk', then you have to wait 
 "                 for the timeout after typing 'j' before typing 'k'.
 "                 default timeout is 1000 ms, you can adjust it with
 "                 ':timeoutlen'
 """
+set timeoutlen=500
 inoremap jk <ESC>
 inoremap <ESC> <NOP>
-set timeoutlen=300
 
+"""
+" Feature: Terminal Insert Mode ESC remap
+"   - Effect: type 'jk' to exit insert mode in Terminal
+"   - Motivation: Default <C-R>N (capital N) is too cumbersome
+"""
+tnoremap jk <C-\><C-n>
 
-
+"""
+" Feature: Vertically centered cursor line
+"   - Effect: search/line-moving/hjkl always keep cursor at the middle of the screen
+"   - Motivation: equivalent to typing 'zz' after every cursor moves
+"""
 set scrolloff=999
 
+"""
+" Feature: Move the cursor by "display" line, not "physical" lines
+"   - Effect: j (Down) & k (Up) now act as gj & gk
+"   - Motivation: for long wrapping lines, the behavior of 'j' 'k' is counterintuitive
+"""
+set colorcolumn=-1
 nnoremap j gj
 nnoremap k gk
 
-
-
+"""
+" Feature: 
+"   - Effect:
+"   - Motivation:
+"""
 set laststatus=2
 
+"""
+" Feature: 
+"   - Effect:
+"   - Motivation:
+"""
 set wildmenu wildmode=full
 set wildcharm=<C-Z>
 nnoremap - :b <C-Z>
 
+"""
+" Feature: 
+"   - Effect:
+"   - Motivation:
+"""
 set wildignore=*.pyc
 set cmdheight=2
 
+"""
+" Feature: 
+"   - Effect:
+"   - Motivation:
+"""
 set showtabline=2
 let mapleader=' '
 nnoremap <leader>1 1gt
@@ -87,6 +120,11 @@ nnoremap <leader>0 :tablast<CR>
 nnoremap <leader>t :tabnew<CR>
 
 " netrw tree view
+"""
+" Feature: 
+"   - Effect:
+"   - Motivation:
+"""
 let g:netrw_liststyle=3
 let g:netrw_banner=0
 let g:netrw_browse_split=4
@@ -96,6 +134,11 @@ augroup ProjectDrawer
   autocmd VimEnter * :Vexplore
 augroup END
 
+"""
+" Feature: 
+"   - Effect:
+"   - Motivation:
+"""
 function! Comment()
   let ext = &filetype
   if ext == 'php' || ext == 'ruby' || ext == 'sh' || ext == 'python'
@@ -121,6 +164,11 @@ endfunction
 map <C-\> :call Comment()<CR>
 map <C-]> :call Uncomment()<CR>
 
+"""
+" Feature: 
+"   - Effect:
+"   - Motivation:
+"""
 """
 " hlsearch will highlight all the searched instances
 " but, when you're no longer interested in the search,
