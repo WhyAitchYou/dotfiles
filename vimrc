@@ -27,6 +27,8 @@ call plug#end()
 set termguicolors
 colorscheme nightfly
 set noshowmode
+set history=50
+syntax enable
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Feature List
@@ -47,7 +49,6 @@ set cursorline
 "                 for the timeout after typing 'j' before typing 'k'.
 "                 default timeout is 1000 ms, you can adjust it with
 "                 ':timeoutlen'
-"   - Demo (Optional)
 """
 inoremap jk <ESC>
 inoremap <ESC> <NOP>
@@ -55,8 +56,6 @@ set timeoutlen=300
 
 
 
-set history=50
-syntax enable
 set scrolloff=999
 
 nnoremap j gj
@@ -66,7 +65,9 @@ nnoremap k gk
 
 set laststatus=2
 
-set wildmenu
+set wildmenu wildmode=full
+set wildcharm=<C-Z>
+nnoremap - :b <C-Z>
 
 set wildignore=*.pyc
 set cmdheight=2
