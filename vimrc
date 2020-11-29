@@ -185,6 +185,8 @@ map <C-]> :call Uncomment()<CR>
 """
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
 """
 " in normal mode, map return key, to the command nohlsearch
 """
