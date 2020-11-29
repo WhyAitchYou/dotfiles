@@ -1,14 +1,15 @@
 # Dotfiles
 
 ## Requirements
-
-1. Run `vim --version | grep termguicolors`, if you see `+termguicolors`, then you should be fine;
+1. Vim version 8.0+
+2. Vim `termguicolors` true color feature enabled
+   Run `vim --version | grep termguicolors`; if you see `+termguicolors`, then you should be fine;
    if you see `-termguicolors`, then your Vim doesn't support true color. You might have to check
    what Vim version you're using. If you're using mac, check if you're using the pre-built Vim or
    the Homebrew version. Run `vim --version` to find out. You might need `Huge version without GUI`
    instead of the `Normal version without GUI`.
 
-   ```
+   ```bash
    ➜ vim --version
    VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Nov 25 2020 22:10:06)
    macOS version
@@ -114,3 +115,7 @@
 
 * Buffer
    * Select from opened buffers: `- <Tab>`
+
+* Search
+   * Search: `/`
+   * Turn off highlights after searching: `<Space> <Enter>`
