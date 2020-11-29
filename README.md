@@ -78,7 +78,36 @@
    touch ~/.vimrc; mkdir ~/.vim
    ```
 
-4. Symlink the `$HOME/.vimrc`.
+4. Symlink the `$HOME/.vimrc`. (Assume you are at the same directory as in step 1)
    ```bash
    ln -s ./dotfiles/vimrc ./vimrc
    ```
+
+5. Open Vim!
+6. Install the plug-ins.
+   ```vim
+   :PlugInstall
+   ```
+7. When in doubt, check Vim's documentation!
+
+## Commands
+
+* Tabs
+   * Create new tab: <Space> t
+   * Go to tab 1: <Space> 1
+   * Go to tab 2: <Space> 2
+   * ...
+   * Go to tab 9: <Space> 9
+   * Go to last tab: <Space> 0
+
+* Comment/Uncomment
+   * Comment a code block: Ctrl \
+   * Uncomment a code block: Ctrl ]
+
+* Insert Mode
+   * Enter Insert Mode: i
+   * Exit Insert Mode: jk
+
+* Terminal Emulator Insert Mode
+   * Enter Terminal's Insert Mode: i
+   * Exit Terminal's Insert Mode: jk 
