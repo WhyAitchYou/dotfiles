@@ -143,7 +143,7 @@ augroup END
 """
 function! Comment()
   let ext = &filetype
-  if ext == 'php' || ext == 'ruby' || ext == 'sh' || ext == 'python'
+  if ext == 'php' || ext == 'ruby' || ext == 'sh' || ext == 'python' || ext == 'yaml'
     s/^/\# /
   elseif ext == 'javascript' || ext == 'java' || ext == 'cpp' || ext == 'go' || ext == 'scala'
     s:^:\/\/ :g
@@ -154,7 +154,7 @@ endfunction
 
 function! Uncomment()
   let ext = &filetype
-  if ext == 'php' || ext == 'ruby' || ext == 'sh' || ext == 'python'
+  if ext == 'php' || ext == 'ruby' || ext == 'sh' || ext == 'python' || ext == 'yaml'
     s/^\# //
   elseif ext == 'javascript' || ext == 'java' || ext == 'cpp' || ext == 'go' || ext == 'scala'
     s:^\/\/ ::g
