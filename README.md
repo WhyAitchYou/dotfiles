@@ -93,21 +93,24 @@
 ## Commands
 
 * Tabs
-   * Create new tab: <Space> t
-   * Go to tab 1: <Space> 1
-   * Go to tab 2: <Space> 2
+   * Create a new tab: `<Space> t`
+   * Go to tab 1: `<Space> 1`
+   * Go to tab 2: `<Space> 2`
    * ...
-   * Go to tab 9: <Space> 9
-   * Go to last tab: <Space> 0
+   * Go to tab 9: `<Space> 9`
+   * Go to last tab: `<Space> 0`
 
 * Comment/Uncomment
-   * Comment a code block: Ctrl \
-   * Uncomment a code block: Ctrl ]
+   * Comment a code block: `<Control> \`
+   * Uncomment a code block: `<Control> ]`
 
 * Insert Mode
-   * Enter Insert Mode: i
-   * Exit Insert Mode: jk
+   * Enter Insert Mode: `i`
+   * Exit Insert Mode: `jk`
 
 * Terminal Emulator Insert Mode
-   * Enter Terminal's Insert Mode: i
-   * Exit Terminal's Insert Mode: jk 
+   * Enter Terminal's Insert Mode: `i`
+   * Exit Terminal's Insert Mode: `jk`
+
+* Buffer
+   * Select from opened buffers: `- <Tab>`
