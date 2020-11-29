@@ -64,10 +64,14 @@
 ## How-To
 
 1. Clone this repository. 
-   ```git clone [ssh/https url]```
+   ```bash
+   git clone [ssh/https url]```
 2. Archieve your current Vim settings.
-   ```mv ~/.vim/ ~/.vim-legacy/; mv ~/.vimrc ~/.vimrc-legacy```
+   ```bash
+   mv ~/.vim/ ~/.vim-legacy/; mv ~/.vimrc ~/.vimrc-legacy```
 3. Create a blank setting files for Vim.
-   ```touch ~/.vimrc; mkdir ~/.vim```
+   ```bash
+   touch ~/.vimrc; mkdir ~/.vim```
 4. Symlink the `$HOME/.vimrc`.
-   ```ln -s ./dotfiles/vimrc ./vimrc```
+   ```bash
+   ln -s ./dotfiles/vimrc ./vimrc```
