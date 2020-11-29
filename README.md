@@ -65,13 +65,20 @@
 
 1. Clone this repository. 
    ```bash
-   git clone [ssh/https url]```
+   git clone [ssh/https url]
+   ```
+
 2. Archieve your current Vim settings.
    ```bash
-   mv ~/.vim/ ~/.vim-legacy/; mv ~/.vimrc ~/.vimrc-legacy```
+   mv ~/.vim/ ~/.vim-legacy/; mv ~/.vimrc ~/.vimrc-legacy
+   ```
+
 3. Create a blank setting files for Vim.
    ```bash
-   touch ~/.vimrc; mkdir ~/.vim```
+   touch ~/.vimrc; mkdir ~/.vim
+   ```
+
 4. Symlink the `$HOME/.vimrc`.
    ```bash
-   ln -s ./dotfiles/vimrc ./vimrc```
+   ln -s ./dotfiles/vimrc ./vimrc
+   ```
