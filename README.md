@@ -2,7 +2,8 @@
 
 ## Requirements
 1. Vim version 8.0+
-2. Vim `termguicolors` true color feature enabled
+2. Vim `termguicolors` true color feature enabled.
+
    Run `vim --version | grep termguicolors`; if you see `+termguicolors`, then you should be fine;
    if you see `-termguicolors`, then your Vim doesn't support true color. You might have to check
    what Vim version you're using. If you're using mac, check if you're using the pre-built Vim or
@@ -74,7 +75,7 @@
    mv ~/.vim/ ~/.vim-legacy/; mv ~/.vimrc ~/.vimrc-legacy
    ```
 
-3. Create a blank setting files for Vim.
+3. Boilerplate for Vim.
    ```bash
    touch ~/.vimrc; mkdir ~/.vim
    ```
