@@ -25,9 +25,11 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme nightfly
-set noshowmode termguicolors history=50 textwidth=100
+set termguicolors
+set noshowmode
+set history=50 textwidth=100
 syntax enable
+colorscheme nightfly
 let g:lightline = { 'colorscheme': 'nightfly' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
