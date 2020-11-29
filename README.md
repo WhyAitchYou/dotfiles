@@ -1,6 +1,7 @@
-# dotfiles
+# Dotfiles
 
 ##Requirements
+
 1. Run `vim --version | grep termguicolors`, if you see `+termguicolors`, then you should be fine;
    if you see `-termguicolors`, then your Vim doesn't support true color. You might have to check
 	 what Vim version you're using. If you're using mac, check if you're using the pre-built Vim or
@@ -60,6 +61,7 @@
   ```
 
 ## How to use
+
 1. `git clone [ssh/https url]`
 2. `mv ~/.vim/ ~/.vim-legacy/; mv ~/.vimrc ~/.vimrc-legacy`
 3. `touch ~/.vimrc; mkdir ~/.vim`
