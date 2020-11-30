@@ -46,7 +46,7 @@ set number relativenumber cursorline
 " Feature: Insert Mode ESC remap
 "   - Effect: type 'jk' to exit insert mode
 "   - Motivation: alternative to <ESC> or <C-[> or <C-c>
-"   - Sideeffect: if, you want to type 'jk', then you have to wait 
+"   - Sideeffect: if, you want to type 'jk', then you have to wait
 "                 for the timeout after typing 'j' before typing 'k'.
 "                 default timeout is 1000 ms, you can adjust it with
 "                 ':timeoutlen'
@@ -77,6 +77,13 @@ set scrolloff=999
 set colorcolumn=-1
 nnoremap j gj
 nnoremap k gk
+
+highlight TrailingSpaces ctermbg=9 guibg=#ff5874
+match TrailingSpaces /\s\+$/
+autocmd BufWinEnter * match TrailingSpaces /\s\+$/
+autocmd InsertEnter * match TrailingSpaces /\s\+\%#\@<!$/
+autocmd InsertLeave * match TrailingSpaces /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 """
 " Feature: 
