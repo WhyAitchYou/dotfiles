@@ -3,6 +3,8 @@
 ## Requirements
 1. Vim version 8.0+
 2. Vim `termguicolors` true color feature enabled.
+3. Inside Vim, run `:echo $TERM` and check if the value is `xterm-256color`;
+   run `:echo &t_Co` and check if the value is `256`.
 
    Run `vim --version | grep termguicolors`; if you see `+termguicolors`, then you should be fine;
    if you see `-termguicolors`, then your Vim doesn't support true color. You might have to check
