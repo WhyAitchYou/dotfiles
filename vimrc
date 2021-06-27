@@ -14,10 +14,11 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'airblade/vim-gitgutter'
+Plug 'sainnhe/everforest'
+Plug 'kien/ctrlp.vim'
 
 call plug#end()
 
@@ -29,8 +30,7 @@ set termguicolors
 set noshowmode
 set history=50 textwidth=100
 syntax enable
-colorscheme nightfly
-let g:lightline = { 'colorscheme': 'nightfly' }
+colorscheme everforest
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Feature List
@@ -48,7 +48,7 @@ set number relativenumber cursorline
 "   - Motivation: alternative to <ESC> or <C-[> or <C-c>
 "   - Sideeffect: if, you want to type 'jk', then you have to wait
 "                 for the timeout after typing 'j' before typing 'k'.
-"                 default timeout is 1000 ms, you can adjust it with
+"                 default timeout is 500 ms, you can adjust it with
 "                 ':timeoutlen'
 """
 set timeoutlen=500
@@ -67,7 +67,7 @@ tnoremap jk <C-\><C-n>
 "   - Effect: search/line-moving/hjkl always keep cursor at the middle of the screen
 "   - Motivation: equivalent to typing 'zz' after every cursor moves
 """
-set scrolloff=999
+" set scrolloff=999
 
 """
 " Feature: Move the cursor by "display" line, not "physical" lines
@@ -85,12 +85,32 @@ autocmd InsertEnter * match TrailingSpaces /\s\+\%#\@<!$/
 autocmd InsertLeave * match TrailingSpaces /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-"""
-" Feature: 
-"   - Effect:
-"   - Motivation:
-"""
-set laststatus=2
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\
+
+
 
 """
 " Feature: 
@@ -127,6 +147,7 @@ nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <leader>0 :tablast<CR>
 nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>w :tabclose<CR>
 
 " netrw tree view
 """
@@ -200,3 +221,8 @@ set smartcase
 nnoremap <leader><CR> :nohlsearch<CR>
 
 
+nnoremap <leader>` :term<CR>
+
+
+set splitbelow
+set splitright

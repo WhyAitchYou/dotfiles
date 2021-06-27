@@ -67,7 +67,7 @@
 
 ## How-To
 
-1. Clone this repository. 
+1. Clone this repository.
    ```bash
    git clone [ssh/https url]
    ```
@@ -77,48 +77,81 @@
    mv ~/.vim/ ~/.vim-legacy/; mv ~/.vimrc ~/.vimrc-legacy
    ```
 
-3. Boilerplate for Vim.
+3. Symlink the `$HOME/.vimrc`. (Assume you are at the same directory as in step 1)
    ```bash
-   touch ~/.vimrc; mkdir ~/.vim
+   ln -s ./dotfiles/vimrc ./.vimrc
    ```
 
-4. Symlink the `$HOME/.vimrc`. (Assume you are at the same directory as in step 1)
-   ```bash
-   ln -s ./dotfiles/vimrc ./vimrc
-   ```
+4. Open Vim!
 
-5. Open Vim!
-6. Install the plug-ins.
+5. Install the plug-ins.
    ```vim
    :PlugInstall
    ```
-7. When in doubt, check Vim's documentation!
+
+6. When in doubt, check Vim's documentation!
+
+## The Basics
+
+### Tabs vs Buffers
+
+
+### Tabs vs Windows
+
+
+### Search + Replace
+`:%s/search/replace/gc` where `g` means globe (entire file), `c` means confirmation.
+
+### Read Only
+
+
+### Copy-Paste between windows
+
+
+### Copy-Paste between system clipboard
+
 
 ## Commands
 
-* Tabs
-   * Create a new tab: `<Space> t`
-   * Go to tab 1: `<Space> 1`
-   * Go to tab 2: `<Space> 2`
-   * ...
-   * Go to tab 9: `<Space> 9`
-   * Go to last tab: `<Space> 0`
+### Windows
+* Open a blank split: `<CTRL-W>n`
+* Open current file in a new split (Right-side): `<CTRL-W>v`
+* Open current file in a new split (Down-side): `<CTRL-W>s`
+* Close split: `<CTRL-W>c`
 
-* Comment/Uncomment
-   * Comment a code block: `<Control> \`
-   * Uncomment a code block: `<Control> ]`
+### Tabs
+* Create a new tab: `<Space>t`
+* Close current tab: `<Space>w`
+* Go to tab 1: `<Space>1`
+* Go to tab 2: `<Space>2`
+* ...
+* Go to tab 9: `<Space>9`
+* Go to last tab: `<Space>0`
 
-* Insert Mode
-   * Enter Insert Mode: `i`
-   * Exit Insert Mode: `jk`
+### Page Viewer
+* Show current line in the __B__ottom of the screen: `zb`
+* Show current line in the __T__op of the screen: `zt`
+* Show current line in the __M__iddle of the screen: `zz`, `z.`
+* Scroll down: `<CTRL-D>`
+* Scroll up: `<CTRL-U>`
+* Scroll page forward: `<CTRL-F>`
+* Scroll page backward: `<CTRL-B>`
 
-* Terminal Emulator Insert Mode
-   * Enter Terminal's Insert Mode: `i`
-   * Exit Terminal's Insert Mode: `jk`
+### Comment/Uncomment
+* Comment a code block: `<CTRL>\`
+* Uncomment a code block: `<CTRL>]`
 
-* Buffer
-   * Select from opened buffers: `- <Tab>`
+### Insert Mode
+* Enter Insert Mode: `i`
+* Exit Insert Mode: `jk`
+
+### Terminal Emulator Insert Mode
+* Enter Terminal's Insert Mode: `i`
+* Exit Terminal's Insert Mode: `jk`
+
+### Buffer
+* Select from opened buffers: `-<Tab>`
 
 * Search
    * Search: `/`
-   * Turn off highlights after searching: `<Space> <Enter>`
+   * Turn off highlights after searching: `<Space><CR>`
