@@ -14,11 +14,22 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'sheerun/vim-polyglot'
-Plug 'bluz71/vim-nightfly-guicolors'
+" Plug 'sheerun/vim-polyglot'
+
+" Git visual helper
+" Source: https://github.com/airblade/vim-gitgutter
+" :help gitgutter
 Plug 'airblade/vim-gitgutter'
+
+" Color Theme
+" Source: https://github.com/sainnhe/everforest
+" :help everforest
 Plug 'sainnhe/everforest'
-Plug 'kien/ctrlp.vim'
+
+" Function: fuzzy file search
+" Source: https://github.com/ctrlpvim/ctrlp.vim
+" :help ctrlp
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -46,14 +57,18 @@ set number relativenumber cursorline
 " Feature: Insert Mode ESC remap
 "   - Effect: type 'jk' to exit insert mode
 "   - Motivation: alternative to <ESC> or <C-[> or <C-c>
-"   - Sideeffect: if, you want to type 'jk', then you have to wait
+"   - Sideeffect1: if, you want to type 'jk', then you have to wait
 "                 for the timeout after typing 'j' before typing 'k'.
 "                 default timeout is 500 ms, you can adjust it with
 "                 ':timeoutlen'
+"   - SideEffect2: disable remap ESC to NOP because otherwise Vim will
+"                 capture the command & tab key strokes when you're in
+"                 INSERT mode.
+"                 https://stackoverflow.com/questions/53311607/
 """
 set timeoutlen=500
 inoremap jk <ESC>
-inoremap <ESC> <NOP>
+" inoremap <ESC> <NOP>
 
 """
 " Feature: Terminal Insert Mode ESC remap
@@ -157,12 +172,12 @@ nnoremap <leader>w :tabclose<CR>
 """
 let g:netrw_liststyle=3
 let g:netrw_banner=0
-let g:netrw_browse_split=4
+" let g:netrw_browse_split=4
 let g:netrw_winsize = 20
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
 
 """
 " Feature: 
@@ -203,7 +218,7 @@ map <C-]> :call Uncomment()<CR>
 " hlsearch will highlight all the searched instances
 " but, when you're no longer interested in the search,
 " there's no easy way to remove the highlighting, other
-" than typing ':nohlsearch'. So here I map return key to
+" than typing ':nohlsearch'. So here I map space+return key to
 " the command ':nohlsearch<CR>'.
 " Originally the return <CR> key moves the cursor to next
 " line; now with the mapping it will execute ':nohlsearch'

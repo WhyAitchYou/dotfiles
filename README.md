@@ -109,7 +109,8 @@
 
 
 ### Copy-Paste between system clipboard
-
+* Copy text from system clipboard: `"+p`
+* Copy text to system clipboard: `"+y`
 
 ## Commands
 
