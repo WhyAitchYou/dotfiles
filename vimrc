@@ -16,12 +16,12 @@ call plug#begin('~/.vim/plugged')
 
 " Plug 'sheerun/vim-polyglot'
 
-" Git visual helper
+" Function: Git visual helper
 " Source: https://github.com/airblade/vim-gitgutter
 " :help gitgutter
 Plug 'airblade/vim-gitgutter'
 
-" Color Theme
+" Function: Color Theme
 " Source: https://github.com/sainnhe/everforest
 " :help everforest
 Plug 'sainnhe/everforest'
@@ -30,6 +30,11 @@ Plug 'sainnhe/everforest'
 " Source: https://github.com/ctrlpvim/ctrlp.vim
 " :help ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
+
+" Function: formatting
+" Source: https://github.com/prettier/vim-prettier
+" :help 
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 call plug#end()
 
@@ -241,3 +246,11 @@ nnoremap <leader>` :term<CR>
 
 set splitbelow
 set splitright
+
+"""
+" Getting 'Prettier: failed to parse buffer' error
+" https://github.com/prettier/vim-prettier/issues/268
+" The ^ solution doesn't work for me.
+"""
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'all'
