@@ -31,11 +31,6 @@ Plug 'sainnhe/everforest'
 " :help ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Function: formatting
-" Source: https://github.com/prettier/vim-prettier
-" :help 
-" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-
 call plug#end()
 
 
@@ -270,3 +265,13 @@ set foldmethod=indent
 " https://thoughtbot.com/blog/vim-spell-checking
 "
 " set spell spelllang=en_us
+
+"""
+" Resume last working session, reopen all the tabs/buffers
+" :mksession XXX.vim
+" then next time you can resume with $vim -S XXX.vim
+
+"""
+" TODO: should i add the entire /.vim folder to repo for tracking?
+" like plugins under /.vim/ dir.
+
