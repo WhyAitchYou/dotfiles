@@ -47,6 +47,8 @@ set noshowmode
 set history=50 textwidth=100
 syntax enable
 colorscheme everforest
+" This line will turn background transparent
+" hi Normal guibg=NONE ctermbg=NONE
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Feature List
@@ -262,3 +264,9 @@ set splitright
 " za, zf (doesn't seem to work), zM, zR
 set foldmethod=indent
 
+
+"""
+" Add spell checking
+" https://thoughtbot.com/blog/vim-spell-checking
+"
+" set spell spelllang=en_us
