@@ -34,7 +34,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Function: formatting
 " Source: https://github.com/prettier/vim-prettier
 " :help 
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
+Plug 'tmhedberg/SimpylFold'
 
 call plug#end()
 
@@ -251,6 +253,9 @@ set splitright
 " Getting 'Prettier: failed to parse buffer' error
 " https://github.com/prettier/vim-prettier/issues/268
 " The ^ solution doesn't work for me.
+" TODO: need to fix this prettier or remove it
 """
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#trailing_comma = 'all'
+" let g:prettier#config#single_quote = 'true'
+" let g:prettier#config#trailing_comma = 'all'
+
+
