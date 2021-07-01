@@ -36,8 +36,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 " :help 
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
-Plug 'tmhedberg/SimpylFold'
-
 call plug#end()
 
 
@@ -258,4 +256,9 @@ set splitright
 " let g:prettier#config#single_quote = 'true'
 " let g:prettier#config#trailing_comma = 'all'
 
+
+"""
+" Use https://stackoverflow.com/questions/357785 the python syntax file to handle folding.
+" za, zf (doesn't seem to work), zM, zR
+set foldmethod=indent
 
