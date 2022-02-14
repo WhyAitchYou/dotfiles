@@ -23,16 +23,29 @@ Plug 'airblade/vim-gitgutter'
 
 " Function: Color Theme
 " Source: https://github.com/sainnhe/everforest
+" Source: https://github.com/junegunn/seoul256.vim
 " :help everforest
+" seoul (dark):
+" 	Range: 233(darkest) - 239(lightest)
+" 	Default: 237
+" seoul (light):
+" 	Range: 252(darkest) - 256(lightest)
+" 	Default: 253
+" :let g:seoul256_background = <value>
 Plug 'sainnhe/everforest'
+Plug 'junegunn/seoul256.vim'
 
 " Function: fuzzy file search
 " Source: https://github.com/ctrlpvim/ctrlp.vim
 " :help ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
 
-call plug#end()
+" Function: Golang language plugin
+" Source: https://github.com/fatih/vim-go
+" https://github.com/fatih/vim-go-tutorial#archived-project-no-maintenance
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration
@@ -41,7 +54,8 @@ set termguicolors
 set noshowmode
 set history=50 textwidth=100
 syntax enable
-colorscheme everforest
+" colorscheme everforest
+colorscheme seoul256
 " This line will turn background transparent
 " hi Normal guibg=NONE ctermbg=NONE
 
@@ -69,7 +83,7 @@ set number relativenumber cursorline
 "                 https://stackoverflow.com/questions/53311607/
 """
 set timeoutlen=500
-inoremap jk <ESC>
+inoremap ne <ESC>
 " inoremap <ESC> <NOP>
 
 """
@@ -94,7 +108,6 @@ tnoremap jk <C-\><C-n>
 set colorcolumn=-1
 nnoremap j gj
 nnoremap k gk
-
 highlight TrailingSpaces ctermbg=9 guibg=#ff5874
 match TrailingSpaces /\s\+$/
 autocmd BufWinEnter * match TrailingSpaces /\s\+$/
@@ -130,7 +143,7 @@ set statusline+=\
 
 
 """
-" Feature: 
+" Feature:
 "   - Effect:
 "   - Motivation:
 """
@@ -139,7 +152,7 @@ set wildcharm=<C-Z>
 nnoremap - :b <C-Z>
 
 """
-" Feature: 
+" Feature:
 "   - Effect:
 "   - Motivation:
 """
@@ -147,7 +160,7 @@ set wildignore=*.pyc
 set cmdheight=2
 
 """
-" Feature: 
+" Feature:
 "   - Effect:
 "   - Motivation:
 """
@@ -168,7 +181,7 @@ nnoremap <leader>w :tabclose<CR>
 
 " netrw tree view
 """
-" Feature: 
+" Feature:
 "   - Effect:
 "   - Motivation:
 """
@@ -182,7 +195,7 @@ let g:netrw_winsize = 20
 " augroup END
 
 """
-" Feature: 
+" Feature:
 "   - Effect:
 "   - Motivation:
 """
@@ -208,11 +221,11 @@ function! Uncomment()
   endif
 endfunction
 
-map <C-\> :call Comment()<CR>
-map <C-]> :call Uncomment()<CR>
+" map <C-\> :call Comment()<CR>
+" map <C-]> :call Uncomment()<CR>
 
 """
-" Feature: 
+" Feature:
 "   - Effect:
 "   - Motivation:
 """
@@ -237,8 +250,12 @@ set smartcase
 """
 nnoremap <leader><CR> :nohlsearch<CR>
 
-
-nnoremap <leader>` :term<CR>
+"""
+" https://gist.github.com/mahemoff/8967b5de067cffc67cec174cb3a9f49d
+" with ++close option
+" type "exit" or "ctrl-D" to exit terminal
+"""
+nnoremap <leader>` :vert term ++close<CR>
 
 
 set splitbelow
@@ -267,11 +284,24 @@ set foldmethod=indent
 " set spell spelllang=en_us
 
 """
+" display tab
+" https://vi.stackexchange.com/questions/422/displaying-tabs-as-characters
+"
+set list
+set listchars=tab:\|·
+
+
+"""
 " Resume last working session, reopen all the tabs/buffers
 " :mksession XXX.vim
-" then next time you can resume with $vim -S XXX.vim
 
 """
 " TODO: should i add the entire /.vim folder to repo for tracking?
 " like plugins under /.vim/ dir.
+" 
+"
+autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype c setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
