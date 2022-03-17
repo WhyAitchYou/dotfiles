@@ -45,6 +45,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 " https://github.com/fatih/vim-go-tutorial#archived-project-no-maintenance
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+Plug 'majutsushi/tagbar'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -305,3 +307,5 @@ autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype c setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
+autocmd FileType c call tagbar#autoopen(0)
+autocmd FileType python call tagbar#autoopen(0)
