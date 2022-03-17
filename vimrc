@@ -85,7 +85,7 @@ set number relativenumber cursorline
 "                 https://stackoverflow.com/questions/53311607/
 """
 set timeoutlen=500
-inoremap ne <ESC>
+inoremap jl <ESC>
 " inoremap <ESC> <NOP>
 
 """
