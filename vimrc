@@ -309,3 +309,8 @@ autocmd Filetype c setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 autocmd FileType c call tagbar#autoopen(0)
 autocmd FileType python call tagbar#autoopen(0)
+
+"""
+" fix vim in tmux has no color
+"""
+set term=xterm-256color
