@@ -36,6 +36,7 @@ Plug 'sainnhe/everforest'
 Plug 'junegunn/seoul256.vim'
 Plug 'aditya-azad/candle-grey'
 Plug 'ldelossa/vimdark'
+Plug 'ulwlu/elly.vim'
 
 " Function: fuzzy file search
 " Source: https://github.com/ctrlpvim/ctrlp.vim

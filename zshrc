@@ -26,7 +26,7 @@ open_with_fzf() {
 zle -N open_with_fzf
 
 cd_with_fzf() {
-    cd $HOME && cd "$( fd -H -I --type directory | fzf )"
+    cd $HOME && cd "$( fd --one-file-system --type directory | fzf )"
     zle .reset-prompt
 }
 zle -N cd_with_fzf
@@ -34,7 +34,7 @@ zle -N cd_with_fzf
 
 # key bindings
 # https://zsh.sourceforge.io/Intro/intro_11.html
-bindkey -s '^v' 'vim\n'
+bindkey -s '^v' 'vim .\n'
 bindkey '^o' 'open_with_fzf'
 bindkey '^f' 'cd_with_fzf'
 
