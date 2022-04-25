@@ -34,7 +34,8 @@ zle -N cd_with_fzf
 
 # key bindings
 # https://zsh.sourceforge.io/Intro/intro_11.html
-bindkey -s 'vmo' 'vim .\n'
+# -s means it's not a widget, it's a command
+bindkey -s 'vmo' 'vim $( fd . | fzf -m )\n'
 bindkey 'neio' 'open_with_fzf'
 bindkey 'oien' 'cd_with_fzf'
 
@@ -45,3 +46,6 @@ SPACESHIP_PYENV_SHOW=false # disable pyenv icon in prompt
 SPACESHIP_CHAR_SYMBOL="$ "
 SPACESHIP_CHAR_SYMBOL_SECONDARY="$ "
 
+
+# ZSH Configs
+KEYTIMEOUT=20 # default 40
