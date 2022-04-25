@@ -34,6 +34,8 @@ Plug 'airblade/vim-gitgutter'
 " :let g:seoul256_background = <value>
 Plug 'sainnhe/everforest'
 Plug 'junegunn/seoul256.vim'
+Plug 'aditya-azad/candle-grey'
+Plug 'ldelossa/vimdark'
 
 " Function: fuzzy file search
 " Source: https://github.com/ctrlpvim/ctrlp.vim
@@ -56,8 +58,10 @@ set termguicolors
 set noshowmode
 set history=50 textwidth=100
 syntax enable
+" colorscheme candle-grey-transparent
+colorscheme vimdark
 " colorscheme everforest
-colorscheme seoul256
+" colorscheme seoul256
 " This line will turn background transparent
 " hi Normal guibg=NONE ctermbg=NONE
 
@@ -300,7 +304,7 @@ set listchars=tab:\|·
 """
 " TODO: should i add the entire /.vim folder to repo for tracking?
 " like plugins under /.vim/ dir.
-" 
+"
 "
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
