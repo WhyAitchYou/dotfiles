@@ -34,9 +34,9 @@ zle -N cd_with_fzf
 
 # key bindings
 # https://zsh.sourceforge.io/Intro/intro_11.html
-bindkey -s '^v' 'vim .\n'
-bindkey '^o' 'open_with_fzf'
-bindkey '^f' 'cd_with_fzf'
+bindkey -s 'vmo' 'vim .\n'
+bindkey 'neio' 'open_with_fzf'
+bindkey 'oien' 'cd_with_fzf'
 
 
 # Spaceship Configs
