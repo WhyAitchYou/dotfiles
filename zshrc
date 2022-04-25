@@ -1,13 +1,19 @@
 # Clone the following repos to $HOME/.y-hu-zsh/ dir
-# https://github.com/spaceship-prompt/spaceship-prompt.git
 # https://github.com/zsh-users/zsh-autosuggestions
 export ZSH="$HOME/.y-hu-zsh"
-source $ZSH/spaceship-prompt/spaceship.zsh-theme
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
+# Theme
+# https://starship.rs/
+eval "$(starship init zsh)"
+
 # alias
 alias ls="ls --color=auto"
+alias ll="ls -l --color=auto"
+alias ..="cd .."
+alias ..2="cd ../.."
+alias hh="cd ~"
 
 
 # pyenv ver >=2.2.5 installed via homebrew
@@ -20,13 +26,14 @@ eval "$(pyenv init -)"
 
 
 # Functions
+# -a is required otherwise fd returns relative path with regard to --base-directory
 open_with_fzf() {
-    fd -H -I --type file --base-directory $HOME/workdir | fzf -m | xargs -o vim
+    fd -H -I -a --type file --base-directory $HOME/workdir | fzf -m | xargs -o vim
 }
 zle -N open_with_fzf
 
 cd_with_fzf() {
-    cd $HOME && cd "$( fd --one-file-system --type directory | fzf )"
+    cd "$( fd --one-file-system --type directory -H -a --base-directory $HOME/workdir | fzf )"
     zle .reset-prompt
 }
 zle -N cd_with_fzf
@@ -38,16 +45,11 @@ zle -N cd_with_fzf
 bindkey -s 'vmo' 'vim $( fd -H -I --type file . | fzf -m )\n'
 bindkey 'neio' 'open_with_fzf'
 bindkey 'oien' 'cd_with_fzf'
-
-
-# Spaceship Configs
-# https://spaceship-prompt.sh/options
-SPACESHIP_PYENV_SHOW=false # disable pyenv icon in prompt
-SPACESHIP_CHAR_SYMBOL="$ "
-SPACESHIP_CHAR_SYMBOL_SECONDARY="$ "
-SPACESHIP_DIR_COLOR=grey
-SPACESHIP_GIT_BRANCH_COLOR=white
+bindkey 'arst' 'autosuggest-accept'
 
 
 # ZSH Configs
 KEYTIMEOUT=20 # default 40
+
+
+
