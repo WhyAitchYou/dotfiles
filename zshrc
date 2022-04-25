@@ -38,3 +38,10 @@ bindkey -s '^v' 'vim\n'
 bindkey '^o' 'open_with_fzf'
 bindkey '^f' 'cd_with_fzf'
 
+
+# Spaceship Configs
+# https://spaceship-prompt.sh/options
+SPACESHIP_PYENV_SHOW=false # disable pyenv icon in prompt
+SPACESHIP_CHAR_SYMBOL="$ "
+SPACESHIP_CHAR_SYMBOL_SECONDARY="$ "
+
