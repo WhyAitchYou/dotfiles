@@ -1,0 +1,42 @@
+# Symlink this file to ~/.config/starship.toml
+# ln -s absolute/path/of/this/file ~/.config/starship.toml
+
+format = "$character"
+right_format = "$all"
+# format = '''
+# $directory$git_branch$git_status$git_commit$jobs $fill $memory_usage$cmd_duration$time
+# $character
+# '''
+
+add_newline = false
+
+[fill]
+symbol = " "
+
+[package]
+disabled = true
+
+[directory]
+truncate_to_repo = false
+style = "white dimmed"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+style = "white"
+
+[time]
+disabled = false
+style = "white"
+format = "[$time]($style) "
+
+[cmd_duration]
+format = "[$duration]($style) "
+
+[status]
+disabled = false
+format = "[$status]($style) "
+
+[memory_usage]
+disabled = false
+threshold = -1
+format = "${ram_pct} "
