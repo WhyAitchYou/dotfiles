@@ -19,9 +19,9 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 
-# functions
+# Functions
 open_with_fzf() {
-    cd $HOME && fd -H --type file --type directory | fzf | xargs -o vim
+    fd -H -I --type file --base-directory $HOME/workdir | fzf -m | xargs -o vim
 }
 zle -N open_with_fzf
 
@@ -35,7 +35,7 @@ zle -N cd_with_fzf
 # key bindings
 # https://zsh.sourceforge.io/Intro/intro_11.html
 # -s means it's not a widget, it's a command
-bindkey -s 'vmo' 'vim $( fd . | fzf -m )\n'
+bindkey -s 'vmo' 'vim $( fd -H -I --type file . | fzf -m )\n'
 bindkey 'neio' 'open_with_fzf'
 bindkey 'oien' 'cd_with_fzf'
 
