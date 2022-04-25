@@ -45,6 +45,8 @@ bindkey 'oien' 'cd_with_fzf'
 SPACESHIP_PYENV_SHOW=false # disable pyenv icon in prompt
 SPACESHIP_CHAR_SYMBOL="$ "
 SPACESHIP_CHAR_SYMBOL_SECONDARY="$ "
+SPACESHIP_DIR_COLOR=grey
+SPACESHIP_GIT_BRANCH_COLOR=white
 
 
 # ZSH Configs
