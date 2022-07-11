@@ -307,7 +307,11 @@ set listchars=tab:\|·
 " TODO: should i add the entire /.vim folder to repo for tracking?
 " like plugins under /.vim/ dir.
 "
-"
+" show existing tab with 4 spaces width
+set tabstop=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
