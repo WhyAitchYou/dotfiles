@@ -132,6 +132,7 @@ function! StatuslineGit()
   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
 
+
 set statusline=
 set statusline+=%#PmenuSel#
 set statusline+=%{StatuslineGit()}
@@ -318,4 +319,8 @@ autocmd FileType python call tagbar#autoopen(0)
 """
 " fix vim in tmux has no color
 """
-set term=xterm-256color
+" set term=xterm-256color
+"
+nmap tsr :pu=strftime('@Date: %F')<CR>
+
+
