@@ -324,6 +324,7 @@ autocmd FileType python call tagbar#autoopen(0)
 " set pwd to the same dir the curren buffer
 """
 set autochdir
+set mouse=a
 " set term=xterm-256color
 "
 nmap tsr :pu=strftime('@Date: %F')<CR>
