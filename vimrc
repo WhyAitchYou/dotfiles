@@ -132,6 +132,7 @@ function! StatuslineGit()
   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
 
+
 set statusline=
 set statusline+=%#PmenuSel#
 set statusline+=%{StatuslineGit()}
@@ -323,3 +324,7 @@ autocmd FileType python call tagbar#autoopen(0)
 " set pwd to the same dir the curren buffer
 """
 set autochdir
+" set term=xterm-256color
+"
+nmap tsr :pu=strftime('@Date: %F')<CR>
+
