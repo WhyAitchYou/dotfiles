@@ -262,7 +262,7 @@ nnoremap <leader><CR> :nohlsearch<CR>
 " with ++close option
 " type "exit" or "ctrl-D" to exit terminal
 """
-nnoremap <leader>` :vert term ++close<CR>
+" nnoremap <leader>t :vert term ++close<CR>
 
 
 set splitbelow
@@ -320,6 +320,6 @@ autocmd FileType c call tagbar#autoopen(0)
 autocmd FileType python call tagbar#autoopen(0)
 
 """
-" fix vim in tmux has no color
+" set pwd to the same dir the curren buffer
 """
-set term=xterm-256color
+set autochdir
