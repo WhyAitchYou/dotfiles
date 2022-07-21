@@ -42,7 +42,7 @@ zle -N cd_with_fzf
 # key bindings
 # https://zsh.sourceforge.io/Intro/intro_11.html
 # -s means it's not a widget, it's a command
-bindkey -s 'vro' 'nvim $( fd -H -I --type file . | fzf -m )\n'
+bindkey -s 'vmo' 'vim $( fd -H -I --type file . | fzf -m )\n'
 bindkey 'neio' 'open_with_fzf'
 bindkey 'oien' 'cd_with_fzf'
 bindkey 'arst' 'autosuggest-accept'
