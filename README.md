@@ -1,6 +1,11 @@
 # Dotfiles
 
 ## Requirements
+0.
+  ```bash
+   $ brew list fzf || brew install fzf
+   $ brew list ripgrep || brew install ripgrep
+   ```
 1. Vim version 8.0+
 2. Vim `termguicolors` true color feature enabled.
 3. Inside Vim, run `:echo $TERM` and check if the value is `xterm-256color`;
