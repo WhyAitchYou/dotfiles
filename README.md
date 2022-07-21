@@ -75,11 +75,13 @@
 2. Archieve your current Vim settings.
    ```bash
    mv ~/.vim/ ~/.vim-legacy/; mv ~/.vimrc ~/.vimrc-legacy
+   mv ~/.zshrc ~/.zshrc-legacy;
    ```
 
 3. Symlink the `$HOME/.vimrc`. (Assume you are at the same directory as in step 1)
    ```bash
-   ln -s ./dotfiles/vimrc ./.vimrc
+   ln -s ./dotfiles/vimrc ~/.vimrc
+   ln -s ./dotfiles/zshrc ~/.zshrc
    ```
 
 4. Open Vim!
@@ -90,13 +92,6 @@
    ```
 
 6. When in doubt, check Vim's documentation!
-
-## The Basics
-
-### Tabs vs Buffers
-
-
-### Tabs vs Windows
 
 
 ### Search + Replace

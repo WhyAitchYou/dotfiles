@@ -58,27 +58,51 @@ call plug#end()
 set termguicolors
 set noshowmode
 set history=50 textwidth=100
+set number relativenumber cursorline
+set timeoutlen=500
 syntax enable
-" colorscheme candle-grey-transparent
 colorscheme vimdark
-" colorscheme everforest
-" colorscheme seoul256
-" This line will turn background transparent
-" hi Normal guibg=NONE ctermbg=NONE
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Feature List
+" NOT NeoVim compatible
+" NOT NeoVim compatible
+" NOT NeoVim compatible
+" NOT NeoVim compatible
+"
+" Plugins install/update
+"
+" Navigate Vim's HELP Doc
+"
+" Colemak Layout Adjustments
+"
+" Terminal Simulator
+"
+" Window Management
+"   Split vertical/horizontal
+"   Size increase/decrease
+"
+" Search
+"   File
+"   Folder
+"   Text
+"
+" File System
+"   Create file/folder
+"   Rename file/folder
+"   Move file/folder
+"   Delete file/folder
+"
+" Tags Navigate
+"   Jump to tag
+"   Jump back
+"   Show stack
+"
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Feature: Hybrid line numbers
-"   - Effect: combine both absolute & relative line number
-"   - Motivation: use a mindset of "[go/select] [up/down] [X] lines"
-"                 relative to the line where the cursor's at
-"""
-set number relativenumber cursorline
 
 """
 " Feature: Insert Mode ESC remap
-"   - Effect: type 'jk' to exit insert mode
+"   - Effect: type 'jl' to exit insert mode
 "   - Motivation: alternative to <ESC> or <C-[> or <C-c>
 "   - Sideeffect1: if, you want to type 'jk', then you have to wait
 "                 for the timeout after typing 'j' before typing 'k'.
@@ -88,6 +112,7 @@ set number relativenumber cursorline
 "                 capture the command & tab key strokes when you're in
 "                 INSERT mode.
 "                 https://stackoverflow.com/questions/53311607/
+"                 (somehow i'm not experiencing this issue anymore...)
 """
 set timeoutlen=500
 inoremap jl <ESC>
@@ -95,10 +120,10 @@ inoremap jl <ESC>
 
 """
 " Feature: Terminal Insert Mode ESC remap
-"   - Effect: type 'jk' to exit insert mode in Terminal
+"   - Effect: type 'jl' to exit insert mode in Terminal
 "   - Motivation: Default <C-R>N (capital N) is too cumbersome
 """
-tnoremap jk <C-\><C-n>
+tnoremap jl <C-\><C-n>
 
 """
 " Feature: Vertically centered cursor line
@@ -263,7 +288,7 @@ nnoremap <leader><CR> :nohlsearch<CR>
 " with ++close option
 " type "exit" or "ctrl-D" to exit terminal
 """
-" nnoremap <leader>t :vert term ++close<CR>
+nnoremap <leader>term :vert term ++close<CR>
 
 
 set splitbelow
