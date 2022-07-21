@@ -5,6 +5,7 @@
   ```bash
    $ brew list fzf || brew install fzf
    $ brew list ripgrep || brew install ripgrep
+   $ brew list fd || brew install fd
    ```
 1. Vim version 8.0+
 2. Vim `termguicolors` true color feature enabled.
