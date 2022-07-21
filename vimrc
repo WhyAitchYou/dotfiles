@@ -39,9 +39,8 @@ Plug 'ldelossa/vimdark'
 Plug 'ulwlu/elly.vim'
 
 " Function: fuzzy file search
-" Source: https://github.com/ctrlpvim/ctrlp.vim
-" :help ctrlp
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
 
 " Function: Golang language plugin
 " Source: https://github.com/fatih/vim-go
@@ -140,6 +139,7 @@ tnoremap jl <C-\><C-n>
 set colorcolumn=-1
 nnoremap j gj
 nnoremap k gk
+nnoremap <C-p> :Files<Cr>
 highlight TrailingSpaces ctermbg=9 guibg=#ff5874
 match TrailingSpaces /\s\+$/
 autocmd BufWinEnter * match TrailingSpaces /\s\+$/
@@ -182,7 +182,7 @@ set statusline+=\
 """
 set wildmenu wildmode=full
 set wildcharm=<C-Z>
-nnoremap - :b <C-Z>
+nnoremap - :Buffers<Cr>
 
 """
 " Feature:
@@ -322,6 +322,7 @@ set foldmethod=indent
 "
 set list
 set listchars=tab:\|·
+set listchars+=space:·
 
 
 """
@@ -353,4 +354,5 @@ set mouse=a
 " set term=xterm-256color
 "
 nmap tsr :pu=strftime('@Date: %F')<CR>
+
 
