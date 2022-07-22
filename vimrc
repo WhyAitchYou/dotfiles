@@ -37,6 +37,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'aditya-azad/candle-grey'
 Plug 'ldelossa/vimdark'
 Plug 'ulwlu/elly.vim'
+Plug 'ntk148v/komau.vim'
 
 " Function: fuzzy file search
 Plug 'junegunn/fzf.vim'
