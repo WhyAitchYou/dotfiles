@@ -61,7 +61,7 @@ set history=50 textwidth=100
 set number relativenumber cursorline
 set timeoutlen=500
 syntax enable
-colorscheme vimdark
+colorscheme desert
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NOT NeoVim compatible
@@ -350,7 +350,7 @@ autocmd FileType python call tagbar#autoopen(0)
 """
 " set pwd to the same dir the curren buffer
 """
-set autochdir
+set noautochdir
 set mouse=a
 " set term=xterm-256color
 "
