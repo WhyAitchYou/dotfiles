@@ -1,5 +1,11 @@
 # Dotfiles
 
+## Workflow
+*. Go to a folder by folder name
+*. Go to a file by filename
+*  Vim - search substring in files in pwd
+*. Vim - check all buffers
+
 ## Requirements
 0.
   ```bash
