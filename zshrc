@@ -13,7 +13,7 @@ alias ls="ls --color=auto"
 alias ll="ls -l --color=auto"
 alias ..="cd .."
 alias ..2="cd ../.."
-alias hh="cd ~"
+alias hh="cd ~/workdir"
 
 
 # pyenv ver >=2.2.5 installed via homebrew
