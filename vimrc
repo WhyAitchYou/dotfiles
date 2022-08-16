@@ -321,7 +321,7 @@ set foldmethod=indent
 " display tab
 " https://vi.stackexchange.com/questions/422/displaying-tabs-as-characters
 "
-set list
+set list!
 set listchars=tab:\|·
 set listchars+=space:·
 
