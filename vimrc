@@ -61,7 +61,7 @@ set history=50 textwidth=100
 set number relativenumber cursorline
 set timeoutlen=500
 syntax enable
-colorscheme desert
+colorscheme seoul256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NOT NeoVim compatible
@@ -321,7 +321,7 @@ set foldmethod=indent
 " display tab
 " https://vi.stackexchange.com/questions/422/displaying-tabs-as-characters
 "
-set list!
+set nolist
 set listchars=tab:\|·
 set listchars+=space:·
 
