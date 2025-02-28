@@ -84,7 +84,7 @@
    git clone [ssh/https url]
    ```
 
-2. Archieve your current Vim settings.
+2. Archive your current Vim settings.
    ```bash
    mv ~/.vim/ ~/.vim-legacy/; mv ~/.vimrc ~/.vimrc-legacy
    mv ~/.zshrc ~/.zshrc-legacy;
