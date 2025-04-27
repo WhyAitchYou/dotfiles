@@ -39,6 +39,10 @@ note: i use Colemak keyboard layout instead of Qwerty, so some keybinding may no
 ### NeoVim
 
 ```bash
+$ git clone https://github.com/WhyAitchYou/kickstart.nvim.git ~/workdir/kickstart.nvim
+
 # ln -s <SOURCE> <symlink>
 $ ln -s ~/workdir/kickstart.nvim/init.lua ~/.config/nvim/init.lua
 ```
+note: symlink is pointing to my own forked repo
+
