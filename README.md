@@ -4,7 +4,7 @@ and by central manage all dotfiles in one place, you get a uniform experience
 across all your computers.
 
 ## requirements
-0.
+0. tools
   ```bash
    $ brew list neovim || brew install neovim
    $ brew list fzf || brew install fzf
@@ -12,6 +12,13 @@ across all your computers.
    $ brew list fd || brew install fd
    ```
 1. NeoVim version >= 0.10.0
+2. install fzf keybindings
+  ```bash
+  $ $(brew --prefix)/opt/fzf/install
+
+  # uninstall is similar
+  $ $(brew --prefix)/opt/fzf/uninstall
+  ```
 
 ## setup
 
@@ -27,6 +34,7 @@ note: i use Colemak keyboard layout instead of Qwerty, so some keybinding may no
 - color presets: "ForestBlue" from [here](https://github.com/olkinn/forest-blue-iTerm).
 - `neio`: fzf files under ~/workdir and open it with nvim
 - `oien`: fzf directories under ~/workdir and cd into it
+- `Ctrl + r`: fzf terminal command history
 
 ### NeoVim
 

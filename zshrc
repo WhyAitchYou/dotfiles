@@ -53,8 +53,14 @@ bindkey 'arst' 'autosuggest-accept'
 # ZSH Configs
 KEYTIMEOUT=20 # default 40
 
+# load private settings that's not version controlled
 if [ -f ~/.zshrc_private ]; then
     source ~/.zshrc_private
 fi
 
+# load fzf key binds
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# make sure all iTerm tabs share the same command history
+setopt inc_append_history    # Write to history immediately
+setopt share_history         # Share history between sessions
