@@ -10,6 +10,7 @@ across all your computers.
    $ brew list fzf || brew install fzf
    $ brew list ripgrep || brew install ripgrep
    $ brew list fd || brew install fd
+   $ brew list starship || brew install starship
    ```
 1. NeoVim version >= 0.10.0
 2. install fzf keybindings
@@ -27,6 +28,7 @@ across all your computers.
 ```bash
 # ln -s <SOURCE> <symlink>
 $ ln -s ~/workdir/dotfiles/zshrc ~/.zshrc
+$ ln -s ~/workdir/dotfiles/starship.toml ~/.config/starship.toml
 ```
 note: i use Colemak keyboard layout instead of Qwerty, so some keybinding may not make sense to you
 
