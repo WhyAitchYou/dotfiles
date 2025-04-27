@@ -3,12 +3,12 @@
 
 format = "$character"
 right_format = "$all"
-# format = '''
-# $directory$git_branch$git_status$git_commit$jobs $fill $memory_usage$cmd_duration$time
-# $character
-# '''
-
 add_newline = false
+command_timeout = 500
+
+[character]
+success_symbol = '[\$](bold green)'
+error_symbol = '[!](bold red)'
 
 [fill]
 symbol = " "
@@ -25,12 +25,16 @@ format = "[$symbol$branch]($style) "
 style = "white"
 
 [time]
-disabled = false
+disabled = true
 style = "white"
 format = "[$time]($style) "
 
 [cmd_duration]
+disabled = true
 format = "[$duration]($style) "
+
+[golang]
+disabled = true
 
 [status]
 disabled = false

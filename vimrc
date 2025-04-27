@@ -49,6 +49,7 @@ Plug 'junegunn/fzf'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'majutsushi/tagbar'
+Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
 
@@ -61,7 +62,7 @@ set history=50 textwidth=100
 set number relativenumber cursorline
 set timeoutlen=500
 syntax enable
-colorscheme seoul256
+colorscheme everforest
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NOT NeoVim compatible
@@ -343,6 +344,7 @@ autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype c setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 autocmd FileType c call tagbar#autoopen(0)
 autocmd FileType python call tagbar#autoopen(0)

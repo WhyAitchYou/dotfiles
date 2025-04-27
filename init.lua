@@ -91,6 +91,16 @@ require('lazy').setup({
     },
   },
 
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = true,
+  },
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
@@ -126,7 +136,6 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
@@ -186,7 +195,7 @@ require('lazy').setup({
   --
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
-  { import = 'custom.plugins' },
+  --   { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -198,18 +207,13 @@ vim.o.hlsearch = false
 -- colorscheme
 vim.cmd("colorscheme poimandres")
 
--- Make line numbers default
-vim.wo.relativenumber = true
-vim.wo.cursorline = true
-vim.wo.number = true
-
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -293,10 +297,10 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'java', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -498,6 +502,14 @@ cmp.setup {
   },
 }
 
+-- Make line numbers default
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.number = true
+
+vim.opt.colorcolumn = "80"
+
+vim.opt.tabstop = 4
+vim.opt.guicursor = ""
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-
