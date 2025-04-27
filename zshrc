@@ -53,10 +53,8 @@ bindkey 'arst' 'autosuggest-accept'
 # ZSH Configs
 KEYTIMEOUT=20 # default 40
 
-alias sshx86="ssh -p 19905 -i ~/.ssh/x86rsa bunspeader@192.168.87.234"
-# this only tunnel the port for jupyter notebook in the background without allowing running commands
-alias notebookx86="ssh -p 19905 -N -f -L localhost:9999:localhost:9999 bunspeader@192.168.87.234"
-alias sshm1="ssh yhu@192.168.87.3"
-alias project="nvim ~/workdir/tracker/project.md"
+if [ -f ~/.zshrc_private ]; then
+    source ~/.zshrc_private
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
