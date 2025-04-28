@@ -91,7 +91,7 @@
     "slogin",
     "telnet"
   ],
-  "Show Status Bar" : true,
+  "Show Status Bar" : false,
   "Ansi 15 Color" : {
     "Red Component" : 0.88627451658248901,
     "Color Space" : "Calibrated",
@@ -405,7 +405,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.58823531866073608
   },
-  "Name" : "Default",
+  "Name" : "yanghu_profile_main",
   "Cursor Text Color" : {
     "Red Component" : 0,
     "Color Space" : "Calibrated",
@@ -413,7 +413,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0
   },
-  "Minimum Contrast" : 0.26000000000000006,
+  "Minimum Contrast" : 0,
   "Shortcut" : "",
   "Tab Color" : {
     "Red Component" : 0.082891680300235748,
