@@ -18,15 +18,6 @@ export GREP_OPTIONS='--color=auto'
 # ls -lh | grep REGEX_PATTERN
 alias lg="ls -lh | rg"
 
-
-# pyenv ver >=2.2.5 installed via homebrew
-# brew upgrade pyenv
-# BE AWARE: the order of below two evals must be like this, not reversed
-# because $(pyenv init --path) should be put inside zprofile, which gets sourced
-# before zshrc (i am just lazy so put them together here)
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
 # Functions
 # -a is required otherwise fd returns relative path with regard to --base-directory
 open_with_fzf() {
