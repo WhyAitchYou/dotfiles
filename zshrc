@@ -1,7 +1,4 @@
-# Clone the following repos to $HOME/.y-hu-zsh/ dir
-# https://github.com/zsh-users/zsh-autosuggestions
-export ZSH="$HOME/workdir"
-source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Theme
 # https://starship.rs/
