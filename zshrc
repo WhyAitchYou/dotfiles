@@ -52,3 +52,6 @@ fi
 # make sure all iTerm tabs share the same command history
 setopt inc_append_history    # Write to history immediately
 setopt share_history         # Share history between sessions
+
+# cursor-agent PATH
+export PATH="$HOME/.local/bin:$PATH"
