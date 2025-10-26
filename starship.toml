@@ -5,7 +5,7 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = "$all"
+format = "$all\n$character"
 # right_format = "$all" -> this is annoying when coppying commands
 add_newline = true
 command_timeout = 700
